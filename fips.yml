@@ -1,0 +1,10 @@
+#
+# fips-sqlite3
+#
+---
+exports:
+    header-dirs:
+        - .
+    modules:
+        sqlite3: .
+
