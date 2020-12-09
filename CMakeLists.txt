@@ -11,12 +11,12 @@ fips_setup()
     fips_project(fips-sqlite3)
 	fips_begin_lib(sqlite3)
 	
-	IF(CMAKE_COMPILER_IS_GNUCC)
+	IF(FIPS_GCC)
 		add_compile_options("-fno-fast-math")
 	ENDIF()
 
-	IF(UNIX)
-		SET(CMAKE_MODULE_LINKER_FLAGS "-ldl")
+	IF(FIPS_LINUX)
+		fips_deps(dl)
 	ENDIF()
 
 	fips_include_directories(.)
